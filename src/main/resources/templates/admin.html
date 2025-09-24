@@ -2,11 +2,15 @@
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
-    <title>Привет, [[${user.username}]]!</title>
+    <title>Админка</title>
 </head>
 <body>
-<h1>Привет, [[${user.username}]]!</h1>
-<p>Email: [[${user.email}]]</p>
+<h1>Админка</h1>
+<ul>
+    <li th:each="user : ${users}">
+        <p>[[${user.username}]] - [[${user.email}]]</p>
+    </li>
+</ul>
 <a href="/logout">Выйти</a>
 </body>
 </html>
