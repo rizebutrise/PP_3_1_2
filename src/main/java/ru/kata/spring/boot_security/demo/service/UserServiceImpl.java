@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import ru.kata.spring.boot_security.demo.models.Role;
 import ru.kata.spring.boot_security.demo.models.User;
@@ -67,6 +66,6 @@ public class UserServiceImpl implements UserDetailsService, UserService {
     }
     @Override
     public Role saveRole(Role role) {
-        return roleRepository.save(role); // ← тебе нужен RoleRepository!
+        return roleRepository.save(role);
     }
 }
